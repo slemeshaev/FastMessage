@@ -7,9 +7,12 @@
 
 import UIKit
 
+private let reuseIdentifer = "ConversationCell"
+
 class ConversationsController: UIViewController {
     
     // MARK: - Properties
+    private let tableView = UITableView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -27,12 +30,25 @@ class ConversationsController: UIViewController {
         view.backgroundColor = .white
         
         configureNavigationBar()
+        configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image,
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(showProfile))
+    }
+    
+    func configureTableView() {
+        tableView.backgroundColor = .white
+        tableView.rowHeight = 80
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifer)
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        view.addSubview(tableView)
+        tableView.frame = view.frame
     }
     
     func configureNavigationBar() {
@@ -54,3 +70,23 @@ class ConversationsController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension ConversationsController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ConversationsController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath)
+        cell.textLabel?.text = "Test Cell"
+        return cell
+    }
+    
+}
