@@ -39,9 +39,23 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Войти", for: .normal)
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.backgroundColor = .systemRed
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
+        return button
+    }()
+    
+    private let dontHaveAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(string: "У вас нет учетной записи? ",
+                                                        attributes: [.font: UIFont.systemFont(ofSize: 16),
+                                                                     .foregroundColor: UIColor.white])
+        attributedTitle.append(NSAttributedString(string: "Войти",
+                                                  attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
+                                                               .foregroundColor: UIColor.white]))
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -50,6 +64,12 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    }
+    
+    // MARK: - Selectors
+    @objc func handleShowSignUp() {
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Helpers
@@ -75,6 +95,10 @@ class LoginController: UIViewController {
         
         stackView.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                          paddingTop: 32, paddingLeft: 32, paddingRight: 32)
+        
+        view.addSubview(dontHaveAccountButton)
+        dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                                     paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
     }
     
     func configureGradientLayer() {
