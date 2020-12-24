@@ -42,6 +42,7 @@ class LoginController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handleShowConversations), for: .touchUpInside)
         button.setHeight(height: 50)
         return button
     }()
@@ -67,6 +68,11 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Selectors
+    @objc func handleShowConversations() {
+        let controller = ConversationsController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
