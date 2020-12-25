@@ -10,6 +10,9 @@ import UIKit
 class LoginController: UIViewController {
     
     // MARK: - Properties
+    
+    private var viewModel = LoginViewModel()
+    
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "bubble.right")
@@ -44,6 +47,7 @@ class LoginController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(handleShowConversations), for: .touchUpInside)
         button.setHeight(height: 50)
+        button.isEnabled = false
         return button
     }()
     
@@ -78,8 +82,30 @@ class LoginController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        
+        checkFormStatus()
+    }
+    
     // MARK: - Helpers
     
+    // проверка состояния формы
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        }
+    }
+    
+    // конфигурация пользовательского интерфейса
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
@@ -105,6 +131,9 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
                                      paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
+        
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
 }

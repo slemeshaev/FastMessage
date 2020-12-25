@@ -11,14 +11,17 @@ class RegistrationController: UIViewController {
     
     // MARK: - Properties
     
+    // - plusPhotoButton
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_button"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        button.clipsToBounds = true
         return button
     }()
     
+    // - emailContainerView
     private lazy var emailContainerView: UIView = {
         return InputContainerView(image: UIImage(systemName: "envelope"),
                                   textField: emailTextField)
@@ -26,6 +29,7 @@ class RegistrationController: UIViewController {
     
     private let emailTextField = CustomTextField(placeholder: "Email")
     
+    // - fullNameContainerView
     private lazy var fullNameContainerView: UIView = {
         return InputContainerView(image: UIImage(systemName: "person"),
                                   textField: fullNameTextField)
@@ -33,11 +37,13 @@ class RegistrationController: UIViewController {
     
     private let fullNameTextField = CustomTextField(placeholder: "Полное имя")
     
+    // - userNameContainerView
     private lazy var userNameContainerView: UIView = {
         return InputContainerView(image: UIImage(systemName: "person"),
                                   textField: userNameTextField)
     }()
     
+    // - userNameTextField
     private let userNameTextField = CustomTextField(placeholder: "Имя пользователя")
     
     private lazy var passwordContainerView: InputContainerView = {
@@ -51,6 +57,7 @@ class RegistrationController: UIViewController {
         return textField
     }()
     
+    // - signUpButton
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Зарегистрироваться", for: .normal)
@@ -63,6 +70,7 @@ class RegistrationController: UIViewController {
         return button
     }()
     
+    // - alreadyHaveAccountButton
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Уже есть учетная запись? ",
@@ -85,7 +93,9 @@ class RegistrationController: UIViewController {
     
     // MARK: - Selectors
     @objc func handleSelectPhoto() {
-        print(#function)
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     @objc func handleSignUpButton() {
@@ -121,6 +131,20 @@ class RegistrationController: UIViewController {
         
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
-                                     paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
+                                        paddingLeft: 32, paddingBottom: 16, paddingRight: 32)
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 3.0
+        plusPhotoButton.layer.cornerRadius = 200 / 2
+        
+        dismiss(animated: true, completion: nil)
     }
 }
