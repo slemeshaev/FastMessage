@@ -94,17 +94,6 @@ class LoginController: UIViewController {
     
     // MARK: - Helpers
     
-    // проверка состояния формы
-    func checkFormStatus() {
-        if viewModel.formIsValid {
-            loginButton.isEnabled = true
-            loginButton.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        } else {
-            loginButton.isEnabled = false
-            loginButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        }
-    }
-    
     // конфигурация пользовательского интерфейса
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
@@ -136,4 +125,18 @@ class LoginController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
+}
+
+// MARK: - AuthenticationControllerProtocol
+extension LoginController: AuthenticationControllerProtocol {
+    // проверка состояния формы
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        }
+    }
 }

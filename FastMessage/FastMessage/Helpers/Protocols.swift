@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol AuthenticationProtocol {
+    var formIsValid: Bool { get }
+}
+
+protocol AuthenticationControllerProtocol {
+    func checkFormStatus()
+}
