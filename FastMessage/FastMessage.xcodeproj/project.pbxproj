@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6608936D25972839000A4C38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608936C25972839000A4C38 /* Protocols.swift */; };
 		6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */; };
 		66880EA72593425400A372CA /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA62593425400A372CA /* InputContainerView.swift */; };
 		66880EAA25934B6A00A372CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA925934B6A00A372CA /* CustomTextField.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6608936C25972839000A4C38 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		66880EA62593425400A372CA /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		66880EA925934B6A00A372CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		6646DCD62590E3F7003B4AC7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6608936C25972839000A4C38 /* Protocols.swift */,
 				66C3B1BC2592345200ED56A7 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -228,6 +231,7 @@
 				66F2F2AB2590A353009D4D49 /* ViewController.swift in Sources */,
 				66C89D4225968AC2007264F0 /* RegistrationViewModel.swift in Sources */,
 				66880EA72593425400A372CA /* InputContainerView.swift in Sources */,
+				6608936D25972839000A4C38 /* Protocols.swift in Sources */,
 				66F2F2A72590A353009D4D49 /* AppDelegate.swift in Sources */,
 				6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */,
 				66F2F2A92590A353009D4D49 /* SceneDelegate.swift in Sources */,
