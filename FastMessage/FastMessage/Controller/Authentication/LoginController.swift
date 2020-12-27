@@ -13,6 +13,7 @@ class LoginController: UIViewController {
     
     private var viewModel = LoginViewModel()
     
+    // - iconImage
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "bubble.right")
@@ -20,6 +21,7 @@ class LoginController: UIViewController {
         return imageView
     }()
     
+    // - emailContainerView
     private lazy var emailContainerView: UIView = {
         return InputContainerView(image: UIImage(systemName: "envelope"),
                                   textField: emailTextField)
@@ -27,6 +29,7 @@ class LoginController: UIViewController {
     
     private let emailTextField = CustomTextField(placeholder: "Email")
     
+    // - passwordContainerView
     private lazy var passwordContainerView: InputContainerView = {
         return InputContainerView(image: UIImage(systemName: "lock"),
                                   textField: passwordTextField)
@@ -38,6 +41,7 @@ class LoginController: UIViewController {
         return textField
     }()
     
+    // - loginButton
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Войти", for: .normal)
@@ -51,6 +55,7 @@ class LoginController: UIViewController {
         return button
     }()
     
+    // - dontHaveAccountButton
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "У вас нет учетной записи? ",
@@ -65,7 +70,6 @@ class LoginController: UIViewController {
     }()
     
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
