@@ -28,7 +28,6 @@ class RegistrationController: UIViewController {
         return InputContainerView(image: UIImage(systemName: "envelope"),
                                   textField: emailTextField)
     }()
-    
     private let emailTextField = CustomTextField(placeholder: "Email")
     
     // - fullNameContainerView
@@ -36,7 +35,6 @@ class RegistrationController: UIViewController {
         return InputContainerView(image: UIImage(systemName: "person"),
                                   textField: fullNameTextField)
     }()
-    
     private let fullNameTextField = CustomTextField(placeholder: "Полное имя")
     
     // - userNameContainerView
@@ -47,7 +45,6 @@ class RegistrationController: UIViewController {
     
     // - userNameTextField
     private let userNameTextField = CustomTextField(placeholder: "Имя пользователя")
-    
     private lazy var passwordContainerView: InputContainerView = {
         return InputContainerView(image: UIImage(systemName: "lock"),
                                   textField: passwordTextField)
@@ -88,7 +85,6 @@ class RegistrationController: UIViewController {
     }()
     
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -125,7 +121,6 @@ class RegistrationController: UIViewController {
     }
     
     // MARK: - Helpers
-    
     func configureUI() {
         configureGradientLayer()
         
