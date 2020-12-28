@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1077880496152-l83s49cttlmhj99a04t8a6pctrugbhbe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1077880496152-l83s49cttlmhj99a04t8a6pctrugbhbe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB15iYbjYkeDOi2925Rg5_VBB1E4sXQLFU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1077880496152</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.zamprog.FastMessage</string>
+	<key>PROJECT_ID</key>
+	<string>fastmessage-66e08</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fastmessage-66e08.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1077880496152:ios:9cf7f14b9f270c212b636d</string>
+</dict>
+</plist>

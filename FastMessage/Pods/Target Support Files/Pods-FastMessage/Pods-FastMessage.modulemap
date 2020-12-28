@@ -1,0 +1,6 @@
+framework module Pods_FastMessage {
+  umbrella header "Pods-FastMessage-umbrella.h"
+
+  export *
+  module * { export * }
+}
