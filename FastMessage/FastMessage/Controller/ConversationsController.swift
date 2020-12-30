@@ -6,26 +6,54 @@
 //
 
 import UIKit
-
-private let reuseIdentifer = "ConversationCell"
+import Firebase
 
 class ConversationsController: UIViewController {
     
     // MARK: - Properties
     private let tableView = UITableView()
+    private static let reuseId = "ConversationCell"
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        authenticateUser()
     }
     
     // MARK: - Selectors
     @objc func showProfile() {
-        print(123)
+        logout()
+    }
+    
+    // MARK: - API
+    func authenticateUser() {
+        if Auth.auth().currentUser?.uid == nil {
+            presentLoginScreen()
+        } else {
+            print("User id is \(Auth.auth().currentUser?.uid) logged in.")
+        }
+    }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("DEBUG: Error signing out...")
+        }
     }
     
     // MARK: - Helpers
+    
+    func presentLoginScreen() {
+        DispatchQueue.main.async {
+            let loginController = LoginController()
+            let navigationController = UINavigationController(rootViewController: loginController)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true, completion: nil)
+        }
+    }
+    
     func configureUI() {
         view.backgroundColor = .white
         
@@ -42,7 +70,7 @@ class ConversationsController: UIViewController {
     func configureTableView() {
         tableView.backgroundColor = .white
         tableView.rowHeight = 80
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifer)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ConversationsController.reuseId)
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,7 +112,7 @@ extension ConversationsController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ConversationsController.reuseId, for: indexPath)
         cell.textLabel?.text = "Test Cell"
         return cell
     }
