@@ -156,7 +156,7 @@ class RegistrationController: UIViewController {
                             return
                         }
                     }
-                    print("DEBUG: Пользователь \(fullName) создан!")
+                    self.dismiss(animated: true, completion: nil)
                 }
                 
             }
