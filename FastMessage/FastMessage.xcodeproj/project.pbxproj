@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */; };
 		66880EA72593425400A372CA /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA62593425400A372CA /* InputContainerView.swift */; };
 		66880EAA25934B6A00A372CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA925934B6A00A372CA /* CustomTextField.swift */; };
+		66C1E67B259DE44500323FB8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1E67A259DE44500323FB8 /* AuthService.swift */; };
 		66C3B1B625922CD700ED56A7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3B1B525922CD700ED56A7 /* LoginController.swift */; };
 		66C3B1BA25922D0700ED56A7 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3B1B925922D0700ED56A7 /* RegistrationController.swift */; };
 		66C3B1BD2592345200ED56A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3B1BC2592345200ED56A7 /* Extensions.swift */; };
@@ -33,6 +34,7 @@
 		6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		66880EA62593425400A372CA /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		66880EA925934B6A00A372CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		66C1E67A259DE44500323FB8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		66C3B1B525922CD700ED56A7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		66C3B1B925922D0700ED56A7 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		66C3B1BC2592345200ED56A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 				925D8704FCF228273207C70F /* Pods-FastMessage.debug.xcconfig */,
 				DD808E448BBD4C56E3426410 /* Pods-FastMessage.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -92,6 +93,7 @@
 		6646DCD82590E407003B4AC7 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				66C1E67A259DE44500323FB8 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -307,6 +309,7 @@
 				6608936D25972839000A4C38 /* Protocols.swift in Sources */,
 				66F2F2A72590A353009D4D49 /* AppDelegate.swift in Sources */,
 				6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */,
+				66C1E67B259DE44500323FB8 /* AuthService.swift in Sources */,
 				66F2F2A92590A353009D4D49 /* SceneDelegate.swift in Sources */,
 				66C3B1BA25922D0700ED56A7 /* RegistrationController.swift in Sources */,
 				66C3B1B625922CD700ED56A7 /* LoginController.swift in Sources */,

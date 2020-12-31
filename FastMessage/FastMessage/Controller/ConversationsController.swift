@@ -38,6 +38,7 @@ class ConversationsController: UIViewController {
     func logout() {
         do {
             try Auth.auth().signOut()
+            presentLoginScreen()
         } catch {
             print("DEBUG: Error signing out...")
         }
@@ -56,6 +57,7 @@ class ConversationsController: UIViewController {
     
     func configureUI() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.barStyle = .black
         
         configureNavigationBar()
         configureTableView()
@@ -83,7 +85,7 @@ class ConversationsController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        appearance.backgroundColor = #colorLiteral(red: 0.08783427626, green: 0.4591970444, blue: 0.9832664132, alpha: 1)
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
