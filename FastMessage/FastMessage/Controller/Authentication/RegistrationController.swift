@@ -116,52 +116,27 @@ class RegistrationController: UIViewController {
     
     // обработка регистрации пользователя
     @objc func handleSignUpButton() {
-        guard let profileImage = profileImage else { return }
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullName = fullNameTextField.text else { return }
         guard let userName = userNameTextField.text?.lowercased() else { return }
+        guard let profileImage = profileImage else { return }
         
-        guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
+        let credentials = RegistrationCredentials(email: email,
+                                                  password: password,
+                                                  fullName: fullName,
+                                                  userName: userName,
+                                                  profileImage: profileImage)
         
-        let fileName = NSUUID().uuidString
-        let ref = Storage.storage().reference(withPath: "/profile_images/\(fileName)")
-        
-        ref.putData(imageData, metadata: nil) { (meta, error) in
-            
+        AuthService.shared.createUser(credentials: credentials) { error in
             if let error = error {
-                print("DEBUG: Failed to upload image with error \(error.localizedDescription)")
+                print("DEBUG: \(error.localizedDescription)")
                 return
             }
             
-            ref.downloadURL { (url, error) in
-                guard let profileImageUrl = url?.absoluteString else { return }
-                
-                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                    if let error = error {
-                        print("DEBUG: Failed to create user with error \(error.localizedDescription)")
-                        return
-                    }
-                    
-                    guard let uid = result?.user.uid else { return }
-                    
-                    let data = ["email": email,
-                                "fullName": fullName,
-                                "profileImageUrl": profileImageUrl,
-                                "uid": uid,
-                                "userName": userName] as [String: Any]
-                    Firestore.firestore().collection("users").document(uid).setData(data) { error in
-                        if let error = error {
-                            print("DEBUG: Failed to upload user data with error \(error.localizedDescription)")
-                            return
-                        }
-                    }
-                    self.dismiss(animated: true, completion: nil)
-                }
-                
-            }
-            
+            self.dismiss(animated: true, completion: nil)
         }
+        
     }
     
     @objc func handleShowSignIn() {
