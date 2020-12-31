@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 extension UIView {
     
@@ -80,6 +81,9 @@ extension UIView {
 }
 
 extension UIViewController {
+    
+    static let hud = JGProgressHUD(style: .dark)
+    
     func configureGradientLayer() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor,
@@ -87,6 +91,18 @@ extension UIViewController {
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
+    }
+    
+    func showLoader(_ show: Bool, withText text: String? = "Загрузка") {
+        view.endEditing(true)
+        UIViewController.hud.textLabel.text = text
+        
+        if show {
+            UIViewController.hud.show(in: view)
+        } else {
+            UIViewController.hud.dismiss()
+        }
+        // show ? hud.show(in: view) : hud.dismiss()
     }
 }
 
