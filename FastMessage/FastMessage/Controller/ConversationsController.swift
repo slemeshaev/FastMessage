@@ -13,6 +13,15 @@ class ConversationsController: UIViewController {
     // MARK: - Properties
     private let tableView = UITableView()
     private static let reuseId = "ConversationCell"
+    private let newMessageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.08783427626, green: 0.4591970444, blue: 0.9832664132, alpha: 1)
+        button.tintColor = .white
+        button.imageView?.setDimensions(height: 24, width: 24)
+        button.addTarget(self, action: #selector(showNewMessage), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -22,6 +31,13 @@ class ConversationsController: UIViewController {
     }
     
     // MARK: - Selectors
+    @objc func showNewMessage() {
+        let controller = NewMessageController()
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
     @objc func showProfile() {
         logout()
     }
@@ -67,6 +83,11 @@ class ConversationsController: UIViewController {
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(showProfile))
+        view.addSubview(newMessageButton)
+        newMessageButton.setDimensions(height: 56, width: 56)
+        newMessageButton.layer.cornerRadius = 56 / 2
+        newMessageButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                                paddingBottom: 16, paddingRight: 24)
     }
     
     func configureTableView() {
