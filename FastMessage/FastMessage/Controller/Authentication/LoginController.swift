@@ -18,7 +18,7 @@ class LoginController: UIViewController {
     // - iconImage
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "bubble.right")
+        imageView.image = UIImage(named: "fastLogo")
         imageView.tintColor = .white
         return imageView
     }()
@@ -123,7 +123,7 @@ class LoginController: UIViewController {
         
         iconImage.centerX(inView: view)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
-        iconImage.setDimensions(height: 120, width: 120)
+        iconImage.setDimensions(height: 150, width: 150)
         
         let stackView = UIStackView(arrangedSubviews: [emailContainerView,
                                                        passwordContainerView,
