@@ -123,7 +123,7 @@ class LoginController: UIViewController {
         
         iconImage.centerX(inView: view)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
-        iconImage.setDimensions(height: 150, width: 150)
+        iconImage.setDimensions(height: 200, width: 200)
         
         let stackView = UIStackView(arrangedSubviews: [emailContainerView,
                                                        passwordContainerView,
