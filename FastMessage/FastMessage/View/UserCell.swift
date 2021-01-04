@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserCell: UITableViewCell {
     
     // MARK: - Properties
+    
+    var user: User? {
+        didSet {
+            configure()
+        }
+    }
+    
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemPink
@@ -51,6 +59,17 @@ class UserCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Helpers
+    
+    func configure() {
+        guard let user = user else { return }
+        fullNameLabel.text = user.fullName
+        userNameLabel.text = user.userName
+        
+        guard let url = URL(string: user.profileImageUrl) else { return }
+        profileImageView.kf.setImage(with: url)
     }
     
 }
