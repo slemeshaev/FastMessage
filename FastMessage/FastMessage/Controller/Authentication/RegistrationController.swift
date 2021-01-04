@@ -146,7 +146,10 @@ class RegistrationController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func keyboardWillShow() {
+    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            let keyboardHeight = keyboardSize.height
+//        }
         if view.frame.origin.y == 0 {
             self.view.frame.origin.y -= 88
         }

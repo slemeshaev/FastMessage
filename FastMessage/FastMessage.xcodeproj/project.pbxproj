@@ -19,6 +19,9 @@
 		66C3B1BD2592345200ED56A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3B1BC2592345200ED56A7 /* Extensions.swift */; };
 		66C89D3E25967EF1007264F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C89D3D25967EF1007264F0 /* LoginViewModel.swift */; };
 		66C89D4225968AC2007264F0 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C89D4125968AC2007264F0 /* RegistrationViewModel.swift */; };
+		66CA699A25A1A33E0096A77F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA699925A1A33E0096A77F /* UserCell.swift */; };
+		66CA699D25A1B0F10096A77F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA699C25A1B0F10096A77F /* User.swift */; };
+		66CA69A025A1B2040096A77F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA699F25A1B2040096A77F /* Service.swift */; };
 		66CD382D259FB3050096B8E7 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CD382C259FB3050096B8E7 /* NewMessageController.swift */; };
 		66F2F2A72590A353009D4D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F2F2A62590A353009D4D49 /* AppDelegate.swift */; };
 		66F2F2A92590A353009D4D49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F2F2A82590A353009D4D49 /* SceneDelegate.swift */; };
@@ -41,6 +44,9 @@
 		66C3B1BC2592345200ED56A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		66C89D3D25967EF1007264F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		66C89D4125968AC2007264F0 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		66CA699925A1A33E0096A77F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		66CA699C25A1B0F10096A77F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		66CA699F25A1B2040096A77F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		66CD382C259FB3050096B8E7 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		66F2F2A32590A353009D4D49 /* FastMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F2F2A62590A353009D4D49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				66C1E67A259DE44500323FB8 /* AuthService.swift */,
+				66CA699F25A1B2040096A77F /* Service.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 			children = (
 				66880EA62593425400A372CA /* InputContainerView.swift */,
 				66880EA925934B6A00A372CA /* CustomTextField.swift */,
+				66CA699925A1A33E0096A77F /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 		6646DCDC2590E412003B4AC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				66CA699C25A1B0F10096A77F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,11 +319,14 @@
 				66C89D4225968AC2007264F0 /* RegistrationViewModel.swift in Sources */,
 				66880EA72593425400A372CA /* InputContainerView.swift in Sources */,
 				6608936D25972839000A4C38 /* Protocols.swift in Sources */,
+				66CA699D25A1B0F10096A77F /* User.swift in Sources */,
 				66CD382D259FB3050096B8E7 /* NewMessageController.swift in Sources */,
 				66F2F2A72590A353009D4D49 /* AppDelegate.swift in Sources */,
 				6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */,
 				66C1E67B259DE44500323FB8 /* AuthService.swift in Sources */,
+				66CA699A25A1A33E0096A77F /* UserCell.swift in Sources */,
 				66F2F2A92590A353009D4D49 /* SceneDelegate.swift in Sources */,
+				66CA69A025A1B2040096A77F /* Service.swift in Sources */,
 				66C3B1BA25922D0700ED56A7 /* RegistrationController.swift in Sources */,
 				66C3B1B625922CD700ED56A7 /* LoginController.swift in Sources */,
 				66C3B1BD2592345200ED56A7 /* Extensions.swift in Sources */,
