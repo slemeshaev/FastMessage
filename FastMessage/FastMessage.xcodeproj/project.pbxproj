@@ -10,6 +10,7 @@
 		4788D037E903C5F941971FBE /* Pods_FastMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111E9F9D27DBBB4AA6E64159 /* Pods_FastMessage.framework */; };
 		6608936D25972839000A4C38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608936C25972839000A4C38 /* Protocols.swift */; };
 		660D37B42599B4B700C42946 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660D37B32599B4B700C42946 /* GoogleService-Info.plist */; };
+		6645A16425A5A51D00829C18 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6645A16325A5A51D00829C18 /* ChatController.swift */; };
 		6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */; };
 		66880EA72593425400A372CA /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA62593425400A372CA /* InputContainerView.swift */; };
 		66880EAA25934B6A00A372CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA925934B6A00A372CA /* CustomTextField.swift */; };
@@ -35,6 +36,7 @@
 		111E9F9D27DBBB4AA6E64159 /* Pods_FastMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6608936C25972839000A4C38 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		660D37B32599B4B700C42946 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6645A16325A5A51D00829C18 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		66880EA62593425400A372CA /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		66880EA925934B6A00A372CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				66C3B1B425922A3900ED56A7 /* Authentication */,
 				6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */,
 				66CD382C259FB3050096B8E7 /* NewMessageController.swift */,
+				6645A16325A5A51D00829C18 /* ChatController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				66C3B1BD2592345200ED56A7 /* Extensions.swift in Sources */,
 				66C89D3E25967EF1007264F0 /* LoginViewModel.swift in Sources */,
 				66880EAA25934B6A00A372CA /* CustomTextField.swift in Sources */,
+				6645A16425A5A51D00829C18 /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

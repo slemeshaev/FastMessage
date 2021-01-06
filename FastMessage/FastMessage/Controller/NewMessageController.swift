@@ -12,6 +12,7 @@ class NewMessageController: UITableViewController {
     // MARK: - Properties
     private static let reuseId = "UserCell"
     private var users = [User]()
+    weak var delegate: NewMessageControllerDelegate?
     
     // MARK: - Lifecycle
     
@@ -57,5 +58,11 @@ extension NewMessageController {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewMessageController.reuseId, for: indexPath) as! UserCell
         cell.user = users[indexPath.row]
         return cell
+    }
+}
+
+extension NewMessageController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.controller(self, wantsToStartChatWith: users[indexPath.row])
     }
 }
