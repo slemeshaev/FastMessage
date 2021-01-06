@@ -7,10 +7,16 @@
 
 import Foundation
 
+// MARK: - Protocols
 protocol AuthenticationProtocol {
     var formIsValid: Bool { get }
 }
 
 protocol AuthenticationControllerProtocol {
     func checkFormStatus()
+}
+
+// MARK: - Delegates
+protocol NewMessageControllerDelegate: class {
+    func controller(_ controller: NewMessageController, wantsToStartChatWith user: User)
 }
