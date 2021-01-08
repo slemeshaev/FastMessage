@@ -20,3 +20,7 @@ protocol AuthenticationControllerProtocol {
 protocol NewMessageControllerDelegate: class {
     func controller(_ controller: NewMessageController, wantsToStartChatWith user: User)
 }
+
+protocol CustomInputAccessoryViewDelegate: class {
+    func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String)
+}
