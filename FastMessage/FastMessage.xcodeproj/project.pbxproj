@@ -10,6 +10,7 @@
 		4788D037E903C5F941971FBE /* Pods_FastMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111E9F9D27DBBB4AA6E64159 /* Pods_FastMessage.framework */; };
 		6608936D25972839000A4C38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608936C25972839000A4C38 /* Protocols.swift */; };
 		660D37B42599B4B700C42946 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 660D37B32599B4B700C42946 /* GoogleService-Info.plist */; };
+		66372B2625A7146600307EFA /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66372B2525A7146600307EFA /* CustomInputAccessoryView.swift */; };
 		6645A16425A5A51D00829C18 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6645A16325A5A51D00829C18 /* ChatController.swift */; };
 		6646DCDE2590E52F003B4AC7 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */; };
 		66880EA72593425400A372CA /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA62593425400A372CA /* InputContainerView.swift */; };
@@ -36,6 +37,7 @@
 		111E9F9D27DBBB4AA6E64159 /* Pods_FastMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6608936C25972839000A4C38 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		660D37B32599B4B700C42946 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		66372B2525A7146600307EFA /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		6645A16325A5A51D00829C18 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		6646DCDD2590E52F003B4AC7 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		66880EA62593425400A372CA /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				66880EA62593425400A372CA /* InputContainerView.swift */,
 				66880EA925934B6A00A372CA /* CustomTextField.swift */,
 				66CA699925A1A33E0096A77F /* UserCell.swift */,
+				66372B2525A7146600307EFA /* CustomInputAccessoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				66C1E67B259DE44500323FB8 /* AuthService.swift in Sources */,
 				66CA699A25A1A33E0096A77F /* UserCell.swift in Sources */,
 				66F2F2A92590A353009D4D49 /* SceneDelegate.swift in Sources */,
+				66372B2625A7146600307EFA /* CustomInputAccessoryView.swift in Sources */,
 				66CA69A025A1B2040096A77F /* Service.swift in Sources */,
 				66C3B1BA25922D0700ED56A7 /* RegistrationController.swift in Sources */,
 				66C3B1B625922CD700ED56A7 /* LoginController.swift in Sources */,
