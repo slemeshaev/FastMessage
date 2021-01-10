@@ -5,4 +5,6 @@
 //  Created by Станислав Лемешаев on 10.01.2021.
 //
 
-import Foundation
+import Firebase
+
+let COLLECTION_MESSAGES = Firestore.firestore().collection("messages")
