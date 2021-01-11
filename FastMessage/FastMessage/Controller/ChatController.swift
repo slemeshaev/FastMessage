@@ -35,6 +35,7 @@ class ChatController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchMessages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +49,14 @@ class ChatController: UICollectionViewController {
     
     override var canBecomeFirstResponder: Bool {
         return true
+    }
+    
+    // MARK: - API
+    func fetchMessages() {
+        Service.fetchMessage(forUser: user) { messages in
+            self.messages = messages
+            self.collectionView.reloadData()
+        }
     }
     
     // MARK: - Helpers
@@ -98,7 +107,7 @@ extension ChatController: CustomInputAccessoryViewDelegate {
                 return
             }
             
-            inputView.messageInputTextView.text = nil
+            inputView.clearMessageText()
             
         }
     }
