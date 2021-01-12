@@ -9,6 +9,7 @@ import Firebase
 
 struct Service {
     
+    // запрос пользователей
     static func fetchUsers(completion: @escaping([User]) -> Void) {
         var users = [User]()
         Firestore.firestore().collection("users").getDocuments { snapshot, error in
