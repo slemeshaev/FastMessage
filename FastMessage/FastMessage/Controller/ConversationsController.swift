@@ -34,6 +34,7 @@ class ConversationsController: UIViewController {
     }
     
     // MARK: - Selectors
+    
     @objc func showNewMessage() {
         let controller = NewMessageController()
         controller.delegate = self
@@ -117,6 +118,7 @@ class ConversationsController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate
+
 extension ConversationsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
@@ -124,6 +126,7 @@ extension ConversationsController: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
+
 extension ConversationsController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,9 +142,9 @@ extension ConversationsController: UITableViewDataSource {
 }
 
 // MARK: - NewMessageControllerDelegate
+
 extension ConversationsController: NewMessageControllerDelegate {
     func controller(_ controller: NewMessageController, wantsToStartChatWith user: User) {
-        //print("User in conversations controller is \(user.userName)")
         controller.dismiss(animated: true, completion: nil)
         let chatController = ChatController(user: user)
         navigationController?.pushViewController(chatController, animated: true)
