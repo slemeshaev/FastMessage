@@ -53,7 +53,7 @@ class ChatController: UICollectionViewController {
     
     // MARK: - API
     func fetchMessages() {
-        Service.fetchMessage(forUser: user) { messages in
+        Service.fetchMessages(forUser: user) { messages in
             self.messages = messages
             self.collectionView.reloadData()
             self.collectionView.scrollToItem(at: [0, self.messages.count - 1], at: .bottom, animated: true)
@@ -113,7 +113,7 @@ extension ChatController: UICollectionViewDelegateFlowLayout {
 extension ChatController: CustomInputAccessoryViewDelegate {
     func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String) {
         
-        Service.uploadMessage(message, to: user) { error in
+        Service.uploadMessages(message, to: user) { error in
             if let error = error {
                 print("DEBUG: Failed to upload message with error \(error.localizedDescription)")
                 return
