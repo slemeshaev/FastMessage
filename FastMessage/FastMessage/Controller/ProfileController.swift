@@ -52,9 +52,11 @@ class ProfileController: UITableViewController {
         
         tableView.tableHeaderView = headerView
         headerView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ProfileController.reuseId)
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileController.reuseId)
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
+        tableView.rowHeight = 64
+        tableView.backgroundColor = .systemGroupedBackground
     }
     
 }
@@ -67,9 +69,20 @@ extension ProfileController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileController.reuseId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileController.reuseId, for: indexPath) as! ProfileCell
+        
         let viewModel = ProfileViewModel(rawValue: indexPath.row)
+        cell.viewModel = viewModel
+        cell.accessoryType = .disclosureIndicator
+        
         return cell
+    }
+}
+
+// MARK: - HeaderInSection
+extension ProfileController {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
     }
 }
 
