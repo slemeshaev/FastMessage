@@ -63,11 +63,12 @@ class ProfileController: UITableViewController {
 extension ProfileController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return ProfileViewModel.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileController.reuseId, for: indexPath)
+        let viewModel = ProfileViewModel(rawValue: indexPath.row)
         return cell
     }
 }
