@@ -50,7 +50,7 @@ class ConversationsController: UIViewController {
     }
     
     @objc func showProfile() {
-        let controller = ProfileController()
+        let controller = ProfileController(style: .insetGrouped)
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
