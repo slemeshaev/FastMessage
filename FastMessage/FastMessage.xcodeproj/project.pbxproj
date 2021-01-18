@@ -18,6 +18,7 @@
 		6660145A25AF9C50001B3E62 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660145925AF9C50001B3E62 /* ConversationCell.swift */; };
 		6660145F25B0460C001B3E62 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660145E25B0460C001B3E62 /* ConversationViewModel.swift */; };
 		6671FE6A25B5668F007CB37B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671FE6925B5668F007CB37B /* ProfileViewModel.swift */; };
+		6671FE6D25B568DE007CB37B /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671FE6C25B568DE007CB37B /* ProfileCell.swift */; };
 		66880EA72593425400A372CA /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA62593425400A372CA /* InputContainerView.swift */; };
 		66880EAA25934B6A00A372CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66880EA925934B6A00A372CA /* CustomTextField.swift */; };
 		6697BD8025A8CC2C00EB036D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697BD7F25A8CC2C00EB036D /* MessageCell.swift */; };
@@ -55,6 +56,7 @@
 		6660145925AF9C50001B3E62 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		6660145E25B0460C001B3E62 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		6671FE6925B5668F007CB37B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		6671FE6C25B568DE007CB37B /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		66880EA62593425400A372CA /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		66880EA925934B6A00A372CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6697BD7F25A8CC2C00EB036D /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				66CA699925A1A33E0096A77F /* UserCell.swift */,
 				6697BD7F25A8CC2C00EB036D /* MessageCell.swift */,
 				6660145925AF9C50001B3E62 /* ConversationCell.swift */,
+				6671FE6C25B568DE007CB37B /* ProfileCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				66C89D4225968AC2007264F0 /* RegistrationViewModel.swift in Sources */,
 				66880EA72593425400A372CA /* InputContainerView.swift in Sources */,
 				6608936D25972839000A4C38 /* Protocols.swift in Sources */,
+				6671FE6D25B568DE007CB37B /* ProfileCell.swift in Sources */,
 				66EF57CD25AB614A003385F2 /* Constants.swift in Sources */,
 				66CA699D25A1B0F10096A77F /* User.swift in Sources */,
 				669A906625A918D900331D08 /* Message.swift in Sources */,
