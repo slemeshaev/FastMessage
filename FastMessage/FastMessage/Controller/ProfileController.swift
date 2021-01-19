@@ -13,9 +13,9 @@ class ProfileController: UITableViewController {
     // MARK: - Properties
     
     private static let reuseId = "ProfileCell"
-    private lazy var headerView = ProfileHeader(frame: .init(x: 0, y: 0,
-                                                             width: view.frame.width,
-                                                             height: 380))
+    private lazy var headerView = ProfileHeader()
+    private let footerView = ProfileFooter()
+    
     private var user: User? {
         didSet { headerView.user = user }
     }
@@ -50,13 +50,17 @@ class ProfileController: UITableViewController {
     func configureUI() {
         tableView.backgroundColor = .white
         
+        headerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 380)
         tableView.tableHeaderView = headerView
         headerView.delegate = self
+        
         tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileController.reuseId)
-        tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.rowHeight = 64
         tableView.backgroundColor = .systemGroupedBackground
+        
+        footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        tableView.tableFooterView = footerView
     }
     
 }
@@ -64,8 +68,8 @@ class ProfileController: UITableViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProfileController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return ProfileViewModel.allCases.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        ProfileViewModel.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
