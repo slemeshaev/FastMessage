@@ -17,8 +17,17 @@ protocol AuthenticationControllerProtocol {
 }
 
 // MARK: - Delegates
+
 protocol ProfileHeaderDelegate: class {
     func dismissController()
+}
+
+protocol ProfileControllerDelegate: class {
+    func handleLogout()
+}
+
+protocol ProfileFooterDelegate: class {
+    func handleLogout()
 }
 
 protocol NewMessageControllerDelegate: class {
