@@ -21,6 +21,10 @@ protocol ProfileHeaderDelegate: class {
     func dismissController()
 }
 
+protocol ProfileFooterDelegate: class {
+    func handleLogout()
+}
+
 protocol NewMessageControllerDelegate: class {
     func controller(_ controller: NewMessageController, wantsToStartChatWith user: User)
 }

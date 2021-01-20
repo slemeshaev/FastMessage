@@ -59,13 +59,15 @@ class ProfileController: UITableViewController {
         tableView.rowHeight = 64
         tableView.backgroundColor = .systemGroupedBackground
         
+        footerView.delegate = self
         footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
         tableView.tableFooterView = footerView
     }
     
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
+// MARK: - UITableViewDataSource
+
 extension ProfileController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,18 +85,38 @@ extension ProfileController {
     }
 }
 
-// MARK: - HeaderInSection
+// MARK: - UITableViewDelegate
+
 extension ProfileController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = ProfileViewModel(rawValue: indexPath.row) else { return }
+        switch viewModel {
+        case .accountInfo:
+            print("Show account info page...")
+        case .settings:
+            print("Show settings page...")
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView()
     }
+    
 }
 
 // MARK: - ProfileHeaderDelegate
+
 extension ProfileController: ProfileHeaderDelegate {
-    
     func dismissController() {
         dismiss(animated: true, completion: nil)
     }
-    
+}
+
+// MARK: - ProfileFooterDelegate
+
+extension ProfileController: ProfileFooterDelegate {
+    func handleLogout() {
+        <#code#>
+    }
 }
