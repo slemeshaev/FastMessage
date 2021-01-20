@@ -20,6 +20,8 @@ class ProfileController: UITableViewController {
         didSet { headerView.user = user }
     }
     
+    weak var delegate: ProfileControllerDelegate?
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -117,6 +119,13 @@ extension ProfileController: ProfileHeaderDelegate {
 
 extension ProfileController: ProfileFooterDelegate {
     func handleLogout() {
-        <#code#>
+        let alertController = UIAlertController(title: nil, message: "Вы действительно хотите выйти?", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { _ in
+            self.dismiss(animated: true) {
+                self.delegate?.handleLogout()
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
