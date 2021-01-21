@@ -14,6 +14,7 @@ class RegistrationController: UIViewController {
     
     private var viewModel = RegistrationViewModel()
     private var profileImage: UIImage?
+    weak var delegate: AuthenticationDelegate?
     
     // - plusPhotoButton
     private let plusPhotoButton: UIButton = {
@@ -137,7 +138,7 @@ class RegistrationController: UIViewController {
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.authenticationComplete()
         }
         
     }
