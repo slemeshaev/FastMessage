@@ -15,6 +15,8 @@ class LoginController: UIViewController {
     
     private var viewModel = LoginViewModel()
     
+    weak var delegate: AuthenticationDelegate?
+    
     // - iconImage
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
@@ -91,13 +93,14 @@ class LoginController: UIViewController {
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.authenticationComplete()
         }
         
     }
     
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
+        controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
     

@@ -18,6 +18,10 @@ protocol AuthenticationControllerProtocol {
 
 // MARK: - Delegates
 
+protocol AuthenticationDelegate: class {
+    func authenticationComplete()
+}
+
 protocol ProfileHeaderDelegate: class {
     func dismissController()
 }
