@@ -95,6 +95,7 @@ class RegistrationController: UIViewController {
     }
     
     // MARK: - Selectors
+    
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
@@ -133,8 +134,8 @@ class RegistrationController: UIViewController {
         
         AuthService.shared.createUser(credentials: credentials) { error in
             if let error = error {
-                print("DEBUG: \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             self.showLoader(false)
