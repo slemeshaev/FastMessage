@@ -34,7 +34,7 @@ struct Service {
         var conversations = [Conversation]()
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let query = COLLECTION_MESSAGES.document(uid).collection("recent-messages").order(by: "timestamp")
+        let query = Firestore.firestore().collection("messages").document(uid).collection("recent-messages").order(by: "timestamp")
         query.addSnapshotListener { (snapshot, error) in
             snapshot?.documentChanges.forEach({ change in
                 let dictionary = change.document.data()
@@ -54,7 +54,7 @@ struct Service {
         var messsages = [Message]()
         guard  let currentUid = Auth.auth().currentUser?.uid else { return }
         
-        let query = COLLECTION_MESSAGES.document(currentUid).collection(user.uid).order(by: "timestamp")
+        let query = Firestore.firestore().collection("messages").document(currentUid).collection(user.uid).order(by: "timestamp")
         
         query.addSnapshotListener { (snapshot, error) in
             snapshot?.documentChanges.forEach({ change in
@@ -76,11 +76,11 @@ struct Service {
                     "toId": user.uid,
                     "timestamp": Timestamp(date: Date())] as [String: Any]
         
-        COLLECTION_MESSAGES.document(currentUid).collection(user.uid).addDocument(data: data) { _ in
-            COLLECTION_MESSAGES.document(user.uid).collection(currentUid).addDocument(data: data, completion: completion)
+        Firestore.firestore().collection("messages").document(currentUid).collection(user.uid).addDocument(data: data) { _ in
+            Firestore.firestore().collection("messages").document(user.uid).collection(currentUid).addDocument(data: data, completion: completion)
             
-            COLLECTION_MESSAGES.document(currentUid).collection("recent-messages").document(user.uid).setData(data)
-            COLLECTION_MESSAGES.document(user.uid).collection("recent-messages").document(currentUid).setData(data)
+            Firestore.firestore().collection("messages").document(currentUid).collection("recent-messages").document(user.uid).setData(data)
+            Firestore.firestore().collection("messages").document(user.uid).collection("recent-messages").document(currentUid).setData(data)
         }
         
     }
