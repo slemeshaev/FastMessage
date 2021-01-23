@@ -74,12 +74,14 @@ class LoginController: UIViewController {
     }()
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
     
     // MARK: - Selectors
+    
     @objc func handleShowConversations() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -116,7 +118,6 @@ class LoginController: UIViewController {
     
     // MARK: - Helpers
     
-    // конфигурация пользовательского интерфейса
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
@@ -150,6 +151,7 @@ class LoginController: UIViewController {
 }
 
 // MARK: - AuthenticationControllerProtocol
+
 extension LoginController: AuthenticationControllerProtocol {
     // проверка состояния формы
     func checkFormStatus() {
