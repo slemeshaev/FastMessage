@@ -96,13 +96,7 @@ extension UIViewController {
     func showLoader(_ show: Bool, withText text: String? = "Загрузка") {
         view.endEditing(true)
         UIViewController.hud.textLabel.text = text
-        
-        if show {
-            UIViewController.hud.show(in: view)
-        } else {
-            UIViewController.hud.dismiss()
-        }
-        // show ? hud.show(in: view) : hud.dismiss()
+        show ? UIViewController.hud.show(in: view) : UIViewController.hud.dismiss()
     }
     
     func configureNavigationBar(withTitle title: String, prefersLargeTitles: Bool) {
