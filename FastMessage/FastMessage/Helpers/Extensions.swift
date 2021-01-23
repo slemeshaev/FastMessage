@@ -128,6 +128,15 @@ extension UIViewController {
         alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
+    
+    
+    static func getKeyboardSize(notification: Notification) -> UIEdgeInsets {
+        let info = notification.userInfo! as NSDictionary
+        let keyboardSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        return contentInsets
+    }
+    
 }
 
 extension UIApplication {
