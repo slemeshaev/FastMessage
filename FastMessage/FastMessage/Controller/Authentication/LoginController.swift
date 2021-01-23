@@ -77,8 +77,6 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(hideKeyboardGesture)
         configureUI()
     }
     
@@ -100,22 +98,18 @@ class LoginController: UIViewController {
     
     @objc func keyboardWasShown(notification: Notification) {
         if view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= getKeyboardSize(notification: notification).bottom
+            self.view.frame.origin.y -= LoginController.getKeyboardSize(notification: notification).bottom
         }
     }
     
     @objc func keyboardWillBeHidden(notification: Notification) {
-        let contentInsets = UIEdgeInsets.zero
-        if view.frame.origin.y == 0 {
-            self.view.frame.origin.y = contentInsets.bottom
+        if view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
         }
     }
     
-    @objc func hideKeyboard(notification: Notification) {
+    @objc func hideKeyboard() {
         self.view.endEditing(true)
-        if view.frame.origin.y == 0 {
-            self.view.frame.origin.y += getKeyboardSize(notification: notification).bottom
-        }
     }
     
     @objc func handleShowConversations() {
@@ -153,15 +147,11 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Helpers
-    
-    private func getKeyboardSize(notification: Notification) -> UIEdgeInsets {
-        let info = notification.userInfo! as NSDictionary
-        let keyboardSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-        return contentInsets
-    }
-    
+
     private func configureUI() {
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(hideKeyboardGesture)
+        
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
