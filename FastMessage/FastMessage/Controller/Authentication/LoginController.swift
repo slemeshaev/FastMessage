@@ -74,12 +74,50 @@ class LoginController: UIViewController {
     }()
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(hideKeyboardGesture)
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     // MARK: - Selectors
+    
+    @objc func keyboardWasShown(notification: Notification) {
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= getKeyboardSize(notification: notification).bottom
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y = contentInsets.bottom
+        }
+    }
+    
+    @objc func hideKeyboard(notification: Notification) {
+        self.view.endEditing(true)
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y += getKeyboardSize(notification: notification).bottom
+        }
+    }
+    
     @objc func handleShowConversations() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -116,8 +154,14 @@ class LoginController: UIViewController {
     
     // MARK: - Helpers
     
-    // конфигурация пользовательского интерфейса
-    func configureUI() {
+    private func getKeyboardSize(notification: Notification) -> UIEdgeInsets {
+        let info = notification.userInfo! as NSDictionary
+        let keyboardSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        return contentInsets
+    }
+    
+    private func configureUI() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
@@ -150,6 +194,7 @@ class LoginController: UIViewController {
 }
 
 // MARK: - AuthenticationControllerProtocol
+
 extension LoginController: AuthenticationControllerProtocol {
     // проверка состояния формы
     func checkFormStatus() {
