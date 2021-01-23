@@ -61,13 +61,13 @@ class ConversationsController: UIViewController {
     // MARK: - API
     
     func fetchConversations() {
-        showLoader(true)
+        //showLoader(true)
         Service.fetchConversations { conversations in
             conversations.forEach { conversation in
                 let message = conversation.message
                 self.conversationsDictionary[message.chatPartnerId] = conversation
+                //self.showLoader(false)
             }
-            self.showLoader(false)
             self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
         }

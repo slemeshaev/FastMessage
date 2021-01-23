@@ -129,7 +129,6 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
     static func getKeyboardSize(notification: Notification) -> UIEdgeInsets {
         let info = notification.userInfo! as NSDictionary
         let keyboardSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size

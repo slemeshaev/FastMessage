@@ -94,6 +94,20 @@ class RegistrationController: UIViewController {
         configureNotificationObservers()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     // MARK: - Selectors
     
     @objc func textDidChange(sender: UITextField) {
@@ -148,23 +162,28 @@ class RegistrationController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-//            let keyboardHeight = keyboardSize.height
-//        }
+    @objc func keyboardWasShown(notification: Notification) {
         if view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= 88
+            self.view.frame.origin.y -= RegistrationController.getKeyboardSize(notification: notification).bottom
         }
     }
     
-    @objc func keyboardWillHide() {
-        if view.frame.origin.y == 0 {
-            self.view.frame.origin.y = 0 
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        if view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
         }
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     // MARK: - Helpers
+    
     func configureUI() {
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(hideKeyboardGesture)
+        
         configureGradientLayer()
         
         view.addSubview(plusPhotoButton)
@@ -196,10 +215,6 @@ class RegistrationController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         userNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
