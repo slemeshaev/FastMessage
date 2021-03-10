@@ -36,6 +36,11 @@
 		66CA699D25A1B0F10096A77F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA699C25A1B0F10096A77F /* User.swift */; };
 		66CA69A025A1B2040096A77F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA699F25A1B2040096A77F /* Service.swift */; };
 		66CD382D259FB3050096B8E7 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CD382C259FB3050096B8E7 /* NewMessageController.swift */; };
+		66EF0B0725F9262800CAFD26 /* Screenshot_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EF0B0225F9262700CAFD26 /* Screenshot_04.jpg */; };
+		66EF0B0825F9262800CAFD26 /* Screenshot_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EF0B0325F9262700CAFD26 /* Screenshot_03.jpg */; };
+		66EF0B0925F9262800CAFD26 /* Screenshot_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EF0B0425F9262700CAFD26 /* Screenshot_02.jpg */; };
+		66EF0B0A25F9262800CAFD26 /* Screenshot_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EF0B0525F9262800CAFD26 /* Screenshot_01.jpg */; };
+		66EF0B0B25F9262800CAFD26 /* Screenshot_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EF0B0625F9262800CAFD26 /* Screenshot_05.jpg */; };
 		66F2F2A72590A353009D4D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F2F2A62590A353009D4D49 /* AppDelegate.swift */; };
 		66F2F2A92590A353009D4D49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F2F2A82590A353009D4D49 /* SceneDelegate.swift */; };
 		66F2F2AE2590A353009D4D49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F2F2AC2590A353009D4D49 /* Main.storyboard */; };
@@ -73,6 +78,11 @@
 		66CA699C25A1B0F10096A77F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		66CA699F25A1B2040096A77F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		66CD382C259FB3050096B8E7 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		66EF0B0225F9262700CAFD26 /* Screenshot_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot_04.jpg; sourceTree = "<group>"; };
+		66EF0B0325F9262700CAFD26 /* Screenshot_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot_03.jpg; sourceTree = "<group>"; };
+		66EF0B0425F9262700CAFD26 /* Screenshot_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot_02.jpg; sourceTree = "<group>"; };
+		66EF0B0525F9262800CAFD26 /* Screenshot_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot_01.jpg; sourceTree = "<group>"; };
+		66EF0B0625F9262800CAFD26 /* Screenshot_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot_05.jpg; sourceTree = "<group>"; };
 		66F2F2A32590A353009D4D49 /* FastMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F2F2A62590A353009D4D49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66F2F2A82590A353009D4D49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +251,11 @@
 		66EF0AFD25F922B800CAFD26 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				66EF0B0525F9262800CAFD26 /* Screenshot_01.jpg */,
+				66EF0B0425F9262700CAFD26 /* Screenshot_02.jpg */,
+				66EF0B0325F9262700CAFD26 /* Screenshot_03.jpg */,
+				66EF0B0225F9262700CAFD26 /* Screenshot_04.jpg */,
+				66EF0B0625F9262800CAFD26 /* Screenshot_05.jpg */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -337,8 +352,13 @@
 			files = (
 				66F2F2B32590A354009D4D49 /* LaunchScreen.storyboard in Resources */,
 				66F2F2B02590A354009D4D49 /* Assets.xcassets in Resources */,
+				66EF0B0B25F9262800CAFD26 /* Screenshot_05.jpg in Resources */,
+				66EF0B0825F9262800CAFD26 /* Screenshot_03.jpg in Resources */,
+				66EF0B0925F9262800CAFD26 /* Screenshot_02.jpg in Resources */,
 				660D37B42599B4B700C42946 /* GoogleService-Info.plist in Resources */,
 				66F2F2AE2590A353009D4D49 /* Main.storyboard in Resources */,
+				66EF0B0A25F9262800CAFD26 /* Screenshot_01.jpg in Resources */,
+				66EF0B0725F9262800CAFD26 /* Screenshot_04.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
-				INFOPLIST_FILE = FastMessage/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FastMessage/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,7 +610,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
-				INFOPLIST_FILE = FastMessage/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FastMessage/Helpers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
