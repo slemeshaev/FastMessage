@@ -142,19 +142,27 @@
 		6646DCD62590E3F7003B4AC7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				66EF0AFD25F922B800CAFD26 /* Screenshots */,
+				66F2F2A62590A353009D4D49 /* AppDelegate.swift */,
+				66F2F2A82590A353009D4D49 /* SceneDelegate.swift */,
 				6608936C25972839000A4C38 /* Protocols.swift */,
 				66C3B1BC2592345200ED56A7 /* Extensions.swift */,
+				66F2F2AC2590A353009D4D49 /* Main.storyboard */,
+				66F2F2B12590A354009D4D49 /* LaunchScreen.storyboard */,
+				66F2F2B42590A354009D4D49 /* Info.plist */,
+				660D37B32599B4B700C42946 /* GoogleService-Info.plist */,
+				66F2F2AF2590A354009D4D49 /* Assets.xcassets */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6646DCD82590E407003B4AC7 /* API */ = {
+		6646DCD82590E407003B4AC7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				66C1E67A259DE44500323FB8 /* AuthService.swift */,
 				66CA699F25A1B2040096A77F /* Service.swift */,
 			);
-			path = API;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		6646DCD92590E40C003B4AC7 /* Controller */ = {
@@ -230,6 +238,13 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		66EF0AFD25F922B800CAFD26 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		66F2F29A2590A353009D4D49 = {
 			isa = PBXGroup;
 			children = (
@@ -251,19 +266,12 @@
 		66F2F2A52590A353009D4D49 /* FastMessage */ = {
 			isa = PBXGroup;
 			children = (
-				66F2F2A62590A353009D4D49 /* AppDelegate.swift */,
-				66F2F2A82590A353009D4D49 /* SceneDelegate.swift */,
 				6646DCDC2590E412003B4AC7 /* Model */,
 				6646DCDB2590E40F003B4AC7 /* View */,
 				6646DCDA2590E40E003B4AC7 /* ViewModel */,
 				6646DCD92590E40C003B4AC7 /* Controller */,
-				6646DCD82590E407003B4AC7 /* API */,
+				6646DCD82590E407003B4AC7 /* Service */,
 				6646DCD62590E3F7003B4AC7 /* Helpers */,
-				66F2F2AC2590A353009D4D49 /* Main.storyboard */,
-				66F2F2AF2590A354009D4D49 /* Assets.xcassets */,
-				66F2F2B12590A354009D4D49 /* LaunchScreen.storyboard */,
-				66F2F2B42590A354009D4D49 /* Info.plist */,
-				660D37B32599B4B700C42946 /* GoogleService-Info.plist */,
 			);
 			path = FastMessage;
 			sourceTree = "<group>";

@@ -11,6 +11,7 @@ import Firebase
 class ConversationsController: UIViewController {
     
     // MARK: - Properties
+    
     private let tableView = UITableView()
     private static let reuseId = "ConversationCell"
     private var conversations = [Conversation]()

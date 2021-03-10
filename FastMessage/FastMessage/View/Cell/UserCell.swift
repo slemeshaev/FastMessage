@@ -42,8 +42,10 @@ class UserCell: UITableViewCell {
     }()
     
     // MARK: - Lifecycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         addSubview(profileImageView)
         profileImageView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
         profileImageView.setDimensions(height: 56, width: 56)
